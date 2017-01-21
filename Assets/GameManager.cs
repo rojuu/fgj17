@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator EndGameDelay()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         delayEnded = true;
     }
 }
