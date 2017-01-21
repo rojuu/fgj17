@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour {
              rigi.velocity = Vector2.zero;
              rigi.AddForce(jump);
          }*/
+         
         // Testing
         if (Input.GetKey(KeyCode.Space))
         {
@@ -27,22 +28,23 @@ public class PlayerMovement : MonoBehaviour {
         else
         {
             if (holdTime >= maxHoldTime)
-                {
-                    rigi.velocity = Vector2.zero;
-                    rigi.AddForce(jump);
-                }
-                else if(holdTime > 0)
-                {
-                    rigi.velocity = Vector2.zero;
-                    rigi.AddForce(jump * holdTime * 5);
-                }
+            {
+                rigi.velocity = Vector2.zero;
+                rigi.AddForce(jump);
+            }
+            else if (holdTime > 0)
+            {
+                rigi.velocity = Vector2.zero;
+                rigi.AddForce(jump * holdTime * 5);
+            }
             holdTime = 0;
 
         }
-	}
+    }
 
     void OnCollisionEnter2D(Collision2D other)
     {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
         Destroy(gameObject);
     }
     
