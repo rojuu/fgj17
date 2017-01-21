@@ -4,7 +4,7 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
+    
     public GameObject endScreenUI;
     bool gameEnded;
     bool delayEnded;
@@ -35,7 +35,6 @@ public class GameManager : MonoBehaviour
     {
         if (gameEnded)
         {
-
             endScreenUI.SetActive(true);
 
             if (Input.GetKeyDown(KeyCode.Space) && delayEnded)
@@ -65,7 +64,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator EndGameDelay()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         delayEnded = true;
     }
 }
