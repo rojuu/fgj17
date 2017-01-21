@@ -47,5 +47,10 @@ public class PlayerMovement : MonoBehaviour {
         GameManager.Instance.EndGame();
         Destroy(gameObject);
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        GameManager.Instance.score++;
+    }
     
 }

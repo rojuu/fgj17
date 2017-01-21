@@ -21,10 +21,18 @@ public class EndScreenUI : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        gameObject.SetActive(false);
+        GameManager.Instance.endScreenUI = gameObject;
+    }
+
     void OnEnable()
     {
-        int score = 5;
-        int bestScore = 40;
-        scoreTexts.text = "Score: " + score + "\nBest: " + bestScore;
+        if(scoreTexts != null && GameManager.Instance != null)
+        {
+            scoreTexts.text = "Score: " + GameManager.Instance.score
+                + "\nBest: " + GameManager.Instance.bestScore;
+        }
     }
 }

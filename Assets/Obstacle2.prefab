@@ -22,6 +22,7 @@ GameObject:
   - 114: {fileID: 114000011450275654}
   - 50: {fileID: 50000013833607914}
   - 114: {fileID: 114000013629840104}
+  - 61: {fileID: 61000012585409922}
   m_Layer: 0
   m_Name: Obstacle2
   m_TagString: Untagged
@@ -179,6 +180,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &61000012585409922
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010174555368}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -1.69, y: 0.53}
+  serializedVersion: 2
+  m_Size: {x: 0.76, y: 4.97}
 --- !u!61 &61000013059161900
 BoxCollider2D:
   m_ObjectHideFlags: 1

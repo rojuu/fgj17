@@ -5,24 +5,39 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    GameObject endScreenUI;
+    public GameObject endScreenUI;
     bool gameEnded;
     bool delayEnded;
 
+    public int score;
+    public int bestScore;
+
 	void Awake ()
     {
-	    if(Instance == null) { Instance = this; }
-        if(Instance != this) { Destroy(gameObject); }
-
-        endScreenUI = FindObjectOfType<EndScreenUI>().gameObject;
-        endScreenUI.SetActive(false);
-
+        Initialize();
     }
 
-	void Update ()
+    void OnLevelWasLoaded()
+    {
+        Initialize();
+    }
+
+    void Initialize()
+    {
+        if (Instance == null) { Instance = this; }
+        if (Instance != this) { Destroy(gameObject); }
+
+        DontDestroyOnLoad(this);
+        DontDestroyOnLoad(gameObject);
+    }
+
+    void Update ()
     {
         if (gameEnded)
         {
+
+            endScreenUI.SetActive(true);
+
             if (Input.GetKeyDown(KeyCode.Space) && delayEnded)
             {
                 delayEnded = false;
@@ -34,12 +49,17 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         gameEnded = true;
-        endScreenUI.SetActive(true);
+        if(score > bestScore)
+        {
+            bestScore = score;
+        }
         StartCoroutine(EndGameDelay());
     }
 
     public void ReloadScene()
     {
+        score = 0;
+        gameEnded = false;
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
     }
 
