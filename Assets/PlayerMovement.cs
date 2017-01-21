@@ -18,18 +18,18 @@ public class PlayerMovement : MonoBehaviour {
 	void Update ()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Jump"))
         {
             rigi.velocity = Vector2.zero;
             rigi.AddForce(jump);
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetButtonUp("Jump"))
         {
             rigi.AddForce(jump * -0.6f);
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetButton("Jump"))
         {
             rigi.gravityScale = -Mathf.Abs(gravityScale)*0.7f;
         }
