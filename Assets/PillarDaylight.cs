@@ -7,7 +7,7 @@ public class PillarDaylight : MonoBehaviour
 
     void Start()
     {
-        dayTimeSprite = Resources.Load<Sprite>("pillar_orange");
+        dayTimeSprite = Resources.Load<Sprite>(GlobalVars.Instance.PillarDaySpriteName);
         if (dayTimeSprite == null) { print("PillarDaylight script missing reference to daylight sprite"); }
 
         SpriteRenderer sr = GetComponent<SpriteRenderer>();

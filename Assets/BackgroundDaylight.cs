@@ -7,7 +7,7 @@ public class BackgroundDaylight : MonoBehaviour
 
 	void Start()
     {
-        dayTimeSprite = Resources.Load<Sprite>("background_day_big");
+        dayTimeSprite = Resources.Load<Sprite>(GlobalVars.Instance.BackgroundDaySpriteName);
         if(dayTimeSprite == null) { print("BackgrounDaylight script missing reference to daylight sprite"); }
 
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
