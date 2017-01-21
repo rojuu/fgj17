@@ -11,16 +11,11 @@ public class Bored : MonoBehaviour {
 
     void OnPreCull()
     {
-        
-        if (GameManager.Instance.score >= 5)
-        {
-            camera.ResetWorldToCameraMatrix();
-            camera.ResetProjectionMatrix();
-            camera.projectionMatrix = camera.projectionMatrix * Matrix4x4.Scale(new Vector3(-1, 1, 1));
-        }
-        
+        camera.ResetWorldToCameraMatrix();
+        camera.ResetProjectionMatrix();
+        camera.projectionMatrix = camera.projectionMatrix * Matrix4x4.Scale(new Vector3(-1, 1, 1));
     }
-
+ 
     // Set it to true so we can watch the flipped Objects
     void OnPreRender()
     {
