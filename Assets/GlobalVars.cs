@@ -13,5 +13,6 @@ public class GlobalVars
         }
     }
 
-    public string GameSceneName = "RoniTest2";
+    public string GameSceneName = "Game";
+    public string MainMenuSceneName = "MainMenu";
 }

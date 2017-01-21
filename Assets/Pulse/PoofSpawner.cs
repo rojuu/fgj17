@@ -9,9 +9,16 @@ public class PoofSpawner : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            GameObject instance = Instantiate(poofPrefab);
-            instance.transform.position = transform.position;
-            instance.transform.rotation = transform.rotation;
+            SpawnPoof();
+            Invoke("SpawnPoof", 0.15f);
         }
+    }
+
+    void SpawnPoof()
+    {
+
+        GameObject instance = Instantiate(poofPrefab);
+        instance.transform.position = transform.position;
+        instance.transform.rotation = transform.rotation;
     }
 }
