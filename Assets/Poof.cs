@@ -3,32 +3,18 @@ using System.Collections;
 
 public class Poof : MonoBehaviour
 {
-    bool moving;
-    float velocity = 30f;
-    Vector3 startPos;
-
-
-    void Start()
-    {
-        startPos = transform.position;
-    }
+    public float velocity = 30f;
+    float timer = 0f;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            moving = true;
-        }
+        timer += Time.deltaTime;
 
-        if (moving)
-        {
-            transform.position += Vector3.right * velocity * Time.deltaTime;
-        }
+        transform.position += Vector3.right * velocity * Time.deltaTime;
 
-        if ((transform.position - startPos).magnitude > 30f)
+        if (timer > 2f)
         {
-            moving = false;
-            transform.position = startPos;
+            Destroy(gameObject);
         }
     }
 }
