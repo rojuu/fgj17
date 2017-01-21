@@ -14,7 +14,6 @@ public class Generate : MonoBehaviour {
 	void CreateObstacle ()
     {
         Instantiate(capsule);
-       
     }
 
 }
