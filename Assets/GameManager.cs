@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -43,7 +44,7 @@ public class GameManager : MonoBehaviour
                 ReloadScene();
             }
         }
-	}
+    }
 
     public void EndGame()
     {
