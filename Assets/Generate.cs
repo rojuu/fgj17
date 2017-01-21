@@ -13,7 +13,8 @@ public class Generate : MonoBehaviour {
 	// Update is called once per frame
 	void CreateObstacle ()
     {
-        Instantiate(capsule);
+        GameObject instance = Instantiate(capsule);
+        instance.transform.position = new Vector3(15, 0, 0);
     }
 
 }
