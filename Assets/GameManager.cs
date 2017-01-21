@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour
@@ -13,9 +14,12 @@ public class GameManager : MonoBehaviour
     public int score;
     public int bestScore;
 
+    AudioSource death;
+
 	void Awake ()
     {
         Initialize();
+        death = GetComponent<AudioSource>();
     }
 
     void OnLevelWasLoaded()
@@ -37,6 +41,7 @@ public class GameManager : MonoBehaviour
         if (gameEnded)
         {
             endScreenUI.SetActive(true);
+            death.Play();
 
             if (Input.GetButtonDown("Jump") && delayEnded)
             {
@@ -71,6 +76,6 @@ public class GameManager : MonoBehaviour
 
     public bool isDay()
     {
-        return (System.DateTime.Now.Hour >= 6 && System.DateTime.Now.Hour <= 18);
+        return (System.DateTime.Now.Hour > 5 && System.DateTime.Now.Hour < 19);
     }
 }

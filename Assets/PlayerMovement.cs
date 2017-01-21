@@ -6,11 +6,13 @@ public class PlayerMovement : MonoBehaviour {
     Rigidbody2D rigi;
     public float holdTime = 0;
     public float maxHoldTime = 0.2f;
+    AudioSource soundWave;
 
     float gravityScale;
 
     void Start()
     {
+        soundWave = GetComponent<AudioSource>();
         rigi = GetComponent<Rigidbody2D>();
         gravityScale = rigi.gravityScale;
     }
@@ -20,6 +22,7 @@ public class PlayerMovement : MonoBehaviour {
 
         if (Input.GetButtonDown("Jump"))
         {
+            soundWave.Play();
             rigi.velocity = Vector2.zero;
             rigi.AddForce(jump);
         }
