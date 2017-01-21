@@ -70,6 +70,6 @@ public class GameManager : MonoBehaviour
 
     public bool isDay()
     {
-        return (System.DateTime.Now.Hour > 5 && System.DateTime.Now.Hour < 19);
+        return (System.DateTime.Now.Hour >= 6 && System.DateTime.Now.Hour <= 18);
     }
 }
