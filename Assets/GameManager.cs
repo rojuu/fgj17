@@ -67,4 +67,9 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         delayEnded = true;
     }
+
+    public bool isDay()
+    {
+        return (System.DateTime.Now.Hour > 5 && System.DateTime.Now.Hour < 19);
+    }
 }
