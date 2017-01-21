@@ -7,7 +7,7 @@ public class PoofSpawner : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Jump"))
         {
             GameObject instance = Instantiate(poofPrefab);
             instance.transform.position = transform.position;

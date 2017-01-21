@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         {
             endScreenUI.SetActive(true);
 
-            if (Input.GetKeyDown(KeyCode.Space) && delayEnded)
+            if (Input.GetButtonDown("Jump") && delayEnded)
             {
                 delayEnded = false;
                 ReloadScene();
