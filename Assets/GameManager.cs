@@ -61,7 +61,6 @@ public class GameManager : MonoBehaviour
 
         endScreenUI.SetActive(true);
         death.Play();
-        print("wai uu no play dis fakkin sound");
 
         if (score > bestScore)
         {
