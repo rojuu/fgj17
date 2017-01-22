@@ -26,6 +26,9 @@ public class MusicManager : MonoBehaviour
     {
         if (!audioSource.isPlaying || SceneManager.GetActiveScene().buildIndex != lastSceneIndex)
         {
+            if (SceneManager.GetActiveScene().name == GlobalVars.Instance.CreditsSceneName)
+                return;
+
             lastSceneIndex = SceneManager.GetActiveScene().buildIndex;
             audioSource.Stop();
             if (SceneManager.GetActiveScene().name == GlobalVars.Instance.GameSceneName)
