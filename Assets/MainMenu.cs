@@ -8,8 +8,10 @@ public class MainMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(SceneManager.GetActiveScene().name == GlobalVars.Instance.MainMenuSceneName)
+            if (SceneManager.GetActiveScene().name == GlobalVars.Instance.MainMenuSceneName)
                 Application.Quit();
+            else if (SceneManager.GetActiveScene().name == GlobalVars.Instance.CreditsSceneName)
+                SceneManager.LoadScene(GlobalVars.Instance.MainMenuSceneName);
         }
     }
 
