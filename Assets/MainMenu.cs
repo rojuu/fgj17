@@ -13,6 +13,12 @@ public class MainMenu : MonoBehaviour
             else if (SceneManager.GetActiveScene().name == GlobalVars.Instance.CreditsSceneName)
                 SceneManager.LoadScene(GlobalVars.Instance.MainMenuSceneName);
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (SceneManager.GetActiveScene().name == GlobalVars.Instance.MainMenuSceneName)
+                LoadGameScene();
+        }
     }
 
     public void LoadGameScene()
