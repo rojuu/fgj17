@@ -52,8 +52,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89cf8d5ed4f89a42ad1c42ec00e69c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchScreenText: {fileID: 21300000, guid: b3e9ff5c229afca4aa6ebae9e42c0d27, type: 3}
-  spacebarText: {fileID: 21300000, guid: c8f2d1593c4ce964986dec2bfb966977, type: 3}
+  touchScreenText: {fileID: 21300000, guid: c8f2d1593c4ce964986dec2bfb966977, type: 3}
+  spacebarText: {fileID: 21300000, guid: b3e9ff5c229afca4aa6ebae9e42c0d27, type: 3}
 --- !u!212 &212000013316694046
 SpriteRenderer:
   m_ObjectHideFlags: 1

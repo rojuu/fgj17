@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpaceTextSwitcher : MonoBehaviour {
+public class SpaceTextSwitcher : MonoBehaviour
+{
 
     public Sprite touchScreenText;
     public Sprite spacebarText;
@@ -15,7 +16,7 @@ public class SpaceTextSwitcher : MonoBehaviour {
         sr.sprite = touchScreenText;
 
 #elif UNITY_IOS
-         sr.sprite = touchScreenText;
+        sr.sprite = touchScreenText;
 
 #else
         sr.sprite = spacebarText;
