@@ -31,6 +31,11 @@ public class EndScreenUI : MonoBehaviour
     {
         if(scoreTexts != null && GameManager.Instance != null)
         {
+            if (GameManager.Instance.score > GameManager.Instance.bestScore)
+            {
+                GameManager.Instance.bestScore = GameManager.Instance.score;
+                PlayerPrefs.SetInt("bestScore", GameManager.Instance.bestScore);
+            }
             scoreTexts.text = "Score: " + GameManager.Instance.score
                 + "\nBest: " + GameManager.Instance.bestScore;
         }
