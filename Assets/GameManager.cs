@@ -47,9 +47,6 @@ public class GameManager : MonoBehaviour
     {
         if (gameEnded)
         {
-            endScreenUI.SetActive(true);
-            death.Play();
-
             if (Input.GetButtonDown("Jump") && delayEnded)
             {
                 delayEnded = false;
@@ -61,11 +58,17 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         gameEnded = true;
-        if(score > bestScore)
+
+        endScreenUI.SetActive(true);
+        death.Play();
+        print("wai uu no play dis fakkin sound");
+
+        if (score > bestScore)
         {
             bestScore = score;
             PlayerPrefs.SetInt("bestScore", bestScore);
         }
+
         StartCoroutine(EndGameDelay());
     }
 
