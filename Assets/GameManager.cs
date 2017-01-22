@@ -45,6 +45,13 @@ public class GameManager : MonoBehaviour
 
     void Update ()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            score = 0;
+            gameEnded = false;
+            SceneManager.LoadScene(GlobalVars.Instance.MainMenuSceneName);
+        }
+
         if (gameEnded)
         {
             if (Input.GetButtonDown("Jump") && delayEnded)
