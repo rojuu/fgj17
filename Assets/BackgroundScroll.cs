@@ -18,6 +18,11 @@ public class BackgroundScroll : MonoBehaviour
         }
 
         startPos = bg_pieces[0].transform.position;
+
+        if(GlobalVars.Instance.lastBGPos != Vector3.zero)
+        {
+            transform.position = GlobalVars.Instance.lastBGPos;
+        }
     }
 
     void Update()
@@ -31,5 +36,7 @@ public class BackgroundScroll : MonoBehaviour
             newPos.x += distance;
             transform.position = newPos;
         }
+
+        GlobalVars.Instance.lastBGPos = transform.position;
     }
 }

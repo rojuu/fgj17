@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     {
         Initialize();
         death = GetComponent<AudioSource>();
+        if(PlayerPrefs.HasKey("bestScore")) { bestScore = PlayerPrefs.GetInt("bestScore"); }
     }
 
     void OnLevelWasLoaded()
@@ -57,6 +58,7 @@ public class GameManager : MonoBehaviour
         if(score > bestScore)
         {
             bestScore = score;
+            PlayerPrefs.SetInt("bestScore", bestScore);
         }
         StartCoroutine(EndGameDelay());
     }
@@ -65,7 +67,7 @@ public class GameManager : MonoBehaviour
     {
         score = 0;
         gameEnded = false;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     IEnumerator EndGameDelay()

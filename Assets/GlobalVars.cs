@@ -56,4 +56,6 @@ public class GlobalVars
     {
         return (System.DateTime.Now.Hour >= 6 && System.DateTime.Now.Hour <= 18);
     }
+
+    public Vector3 lastBGPos;
 }
