@@ -18,16 +18,17 @@ public class GameManager : MonoBehaviour
 
 	void Awake ()
     {
+        SceneManager.sceneLoaded += OnSceneLoad;
         Initialize();
         death = GetComponent<AudioSource>();
         if(PlayerPrefs.HasKey("bestScore")) { bestScore = PlayerPrefs.GetInt("bestScore"); }
     }
 
-    void OnLevelWasLoaded()
+    private void OnSceneLoad(Scene arg0, LoadSceneMode arg1)
     {
         Initialize();
     }
-
+    
     void Initialize()
     {
         if (Instance == null) { Instance = this; }
@@ -35,6 +36,11 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(this);
         DontDestroyOnLoad(gameObject);
+    }
+
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoad;
     }
 
     void Update ()
