@@ -8,12 +8,23 @@ public class MainMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
+            if(SceneManager.GetActiveScene().name == GlobalVars.Instance.MainMenuSceneName)
+                Application.Quit();
         }
+    }
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            SceneManager.LoadScene(GlobalVars.Instance.GameSceneName);
-        }
+    public void LoadGameScene()
+    {
+       SceneManager.LoadScene(GlobalVars.Instance.GameSceneName);
+    }
+
+    public void LoadCreditsScene()
+    {
+        SceneManager.LoadScene(GlobalVars.Instance.CreditsSceneName);
+    }
+
+    public void LoadMenuScene()
+    {
+        SceneManager.LoadScene(GlobalVars.Instance.MainMenuSceneName);
     }
 }

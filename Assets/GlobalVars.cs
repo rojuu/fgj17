@@ -15,6 +15,7 @@ public class GlobalVars
 
     public string GameSceneName = "Game";
     public string MainMenuSceneName = "MainMenu";
+    public string CreditsSceneName = "Credits";
 
     public string BackgroundDaySpriteName = "background_day_big";
     public string PillarDaySpriteName = "pillar_orange";
