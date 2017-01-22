@@ -69,11 +69,11 @@ public class GameManager : MonoBehaviour
         endScreenUI.SetActive(true);
         death.Play();
 
-        if (score > bestScore)
+        /*if (score > bestScore)
         {
             bestScore = score;
             PlayerPrefs.SetInt("bestScore", bestScore);
-        }
+        }*/
 
         StartCoroutine(EndGameDelay());
     }
