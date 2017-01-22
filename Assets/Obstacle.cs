@@ -15,8 +15,9 @@ public class Obstacle : MonoBehaviour {
         transform.position = new Vector3(transform.position.x, transform.position.y + rand, transform.position.z);
 	}
 
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D col)
     {
-        point.Play();
+        if(col.tag == "Player")
+            point.Play();
     }
 }
